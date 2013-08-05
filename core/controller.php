@@ -20,19 +20,20 @@ class Controller {
 	
 	}
 	function render($filename){
-		ob_start();
-		extract($this->vars);
-		require(ROOT.'/views/'.get_class($this).'/'.$filename.'.php');
-		$this->loadModel('Message');
-		$m=count($this->Message->find());
-		$content_for_layout= ob_get_clean();
-		if($this->layout==false)
-		{
-			echo $content_for_layout;
-		}else{
-			require(ROOT.'/views/'.'layout'.'/'.$this->layout.'.php');
+		//ob_start();
+		//extract($this->vars);
+		//require(ROOT.'/views/'.get_class($this).'/'.$filename.'.php');
+                require(ROOT.'views/'.get_class($this).'/'.$filename.'.php');
+		//$this->loadModel('Message');
+		//$m=count($this->Message->find());
+		//$content_for_layout= ob_get_clean();
+		//if($this->layout==false)
+		//{
+			//echo $content_for_layout;
+		//}else{
+			//require(ROOT.'/views/'.'layout'.'/'.$this->layout.'.php');
 			
-		}
+		//}
 	}
 }
 ?>

@@ -21,6 +21,7 @@
 		 {
 			 $this->$k=$v;
 		 }
+                 return $data;
 		 
 		 
 	 }

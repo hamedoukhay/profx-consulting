@@ -2,12 +2,15 @@
 class Bootstrap {
 
     function __construct() {
+        define('ROOT',str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 $url = explode('/', rtrim($_GET['url'],'/'));
-print_r($url);
+//print_r($url);
 
 $file = 'controllers/'. $url[0] . '.php';
 if (file_exists($file))
-{ require ($file);
+{ 
+   // echo $file;
+    require ($file);
 $controllers = new $url[0];}
 else
 {

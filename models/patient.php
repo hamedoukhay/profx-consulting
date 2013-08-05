@@ -6,11 +6,20 @@ class Patient extends Model {
          
     }
     function findAll(){
+        $data = array();
+        $d = array();
          $sql="SELECT * FROM profx_".$this->table;
-		 echo $sql;
+		// echo $sql;
 		 $req=mysql_query($sql) or die(mysql_error().'<br> =>'.mysql_query($sql));
-		 $data=mysql_fetch_array($req);
-                 return $data;
+                 while ($row = mysql_fetch_array($req)) {
+                     $data['id']=$row[0];
+                      $data['nom']=$row[1];
+                      $d[]=$data;
+                 }
+                 return $d;
+         
+          
+              
     }
 
 }
