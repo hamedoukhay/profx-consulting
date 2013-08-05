@@ -1,7 +1,8 @@
 <?php
-class Help {
+class Help extends Controller {
 
     function __construct() {
+        parent::__construct();
         echo 'we are inside help</br>';  
     }
     public function other($arg = FALSE){
